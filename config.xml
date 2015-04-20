@@ -9,7 +9,6 @@
     <preference name="bgcolor" value="#ffffff"/>
     <preference name="fullscreen" value="false"/>
     <preference name="opacity" value="0.9"/>
-    <preference name="display" value="false"/>
+    <preference name="display" value="true"/>
     <preference name="z-index" value="1000"/>
-    <feature name="data" value="feature.transtep.data"/>
 </plugin>
