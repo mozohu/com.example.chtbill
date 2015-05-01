@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="title">
-            Input Bank ID:
+            輸入銀行代碼 Input Bank ID:
         </div>
         <div>
             <input id="input" type="text"></input>
@@ -20,12 +20,17 @@
             $("#input").keyboard().change(function(){
                 var v=$(this).val();
                 if(/^$/.test(v)){
+                    $("div.keyboard button#bs").css("visibility","hidden");
+                    $("div.keyboard button#cl").css("visibility","hidden");
                     $("button.next").css("visibility","hidden");
                 }else{
+                    $("div.keyboard button#bs").css("visibility","");
+                    $("div.keyboard button#cl").css("visibility","");
                     $("button.next").css("visibility","");
                 }
             }).trigger("change");
             $("div.keyboard div.letter").css("visibility","hidden");
+            $("div.keyboard div.letter-lc").css("display","none");
             $("button.next").click(function(){
                     sessionStorage.setItem('chtbill.bid',$("#input").val());
             });

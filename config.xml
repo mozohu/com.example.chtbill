@@ -4,7 +4,7 @@
     <category>龍雲數位</category>
     <description>a sample IVM Plugin.</description>
     <author email="xxkuo@transtep.com" href="http://www.transtep.com">Transtep RD Team</author>
-    <serviceurl href="assets://id.html"/>
+    <serviceurl href="assets://id.html?v=1"/>
     <preference name="position" value="560,150,800,600"/>
     <preference name="bgcolor" value="#ffffff"/>
     <preference name="fullscreen" value="false"/>

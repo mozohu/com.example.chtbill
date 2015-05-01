@@ -1,12 +1,13 @@
 html *
 {
-    font-size: 36px !important;
-    font-family: Arial !important;
+    font-size: 36px;
+    font-family: Arial;
 }
 
 .title
 {
-    color: white;
+    font-size: 48px;
+    color: yellow;
     background-color: blue;
     margin-bottom: 10px;
     padding: 5px;
@@ -30,6 +31,10 @@ table td {
 
 table tr.focused {
     background-color: #EEEEEE;
+}
+
+.keyboard * {
+    font-family: Andale Mono, monospace;
 }
 
 .keyboard {

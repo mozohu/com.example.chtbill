@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery.keyboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    </head>
+    <body>
+        <div class="title">
+            輸入電話號碼 Input Phone No:
+        </div>
+        <div>
+            <input id="input" type="text"></input>
+        </div>
+        <div class="footer">
+            <button>Cancel</button>
+            <a href="id.html"><button>Prev</button></a>
+            <a href="login.html"><button class="next">Next</button></a>
+        </div>
+        <script>
+            $("#input").keyboard().change(function(){
+                var v=$(this).val();
+                if(/^$/.test(v)){
+                    $("div.keyboard button#bs").css("visibility","hidden");
+                    $("div.keyboard button#cl").css("visibility","hidden");
+                    $("button.next").css("visibility","hidden");
+                }else{
+                    $("div.keyboard button#bs").css("visibility","");
+                    $("div.keyboard button#cl").css("visibility","");
+                    $("button.next").css("visibility","");
+                }
+            }).trigger("change");
+            $("div.keyboard div.number").css("visibility","");
+            $("div.keyboard div.letter").css("visibility","hidden");
+            $("div.keyboard div.letter-uc").css("visibility","hidden");
+            $("div.keyboard div.letter-lc").css("display","none");
+            $("button.next").click(function(){
+                var input=$("#input").val();
+                sessionStorage.setItem('chtbill.phno',input);
+            });
+        </script>
+    </body>
+</html>
