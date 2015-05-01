@@ -89,7 +89,7 @@
         dll+="<button>x</button>";
         dll+="<button>y</button>";
         dll+="<button>z</button>";
-        dlu+="<button id='uc'>UC</button>";
+        dll+="<button id='uc'>UC</button>";
         dll+="</div>";
         kb.find(".letter-lc").append(dll);
         var input=this;
