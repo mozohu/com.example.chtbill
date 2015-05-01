@@ -6,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="css/style.css"> 
     </head>
     <body>
+        <audio>
+	        <source src="click.mp3"></source>
+        </audio>
         <div class="title">
             輸入銀行帳號 Input Bank Account No:
         </div>
@@ -34,6 +37,10 @@
             $("div.keyboard div.letter-lc").css("display","none");
             $("button.next").click(function(){
                     sessionStorage.setItem('chtbill.bacc',$("#input").val());
+            });
+            $("button").click(function(){
+                var au=$("audio")[0];
+                au.play();
             });
         </script>
     </body>

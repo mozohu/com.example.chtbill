@@ -6,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="css/style.css"> 
     </head>
     <body>
+        <audio>
+	        <source src="click.mp3"></source>
+        </audio>
         <div class="title">
             確認繳費 Are You Sure To Pay?
         </div>
@@ -28,6 +31,10 @@
             msg+="Via the bank account of ("+bid+") "+bacc+"\n";
             msg+="The amount is "+bil[3]+"\n";
             $("textarea").text(msg);
+            $("button").click(function(){
+                var au=$("audio")[0];
+                au.play();
+            });
         </script>
     </body>
 </html>

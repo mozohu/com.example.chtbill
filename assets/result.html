@@ -6,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="css/style.css"> 
     </head>
     <body>
+        <audio>
+	        <source src="click.mp3"></source>
+        </audio>
         <div class="title">
             交易結果 Transaction Result:
         </div>
@@ -20,6 +23,10 @@
             var msg="Dear Customer,\n";
             msg+="The bill is paid successfully, thanks.\n";
             $("textarea").text(msg);
+            $("button").click(function(){
+                var au=$("audio")[0];
+                au.play();
+            });
         </script>
     </body>
 </html>

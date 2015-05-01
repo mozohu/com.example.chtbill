@@ -6,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="css/style.css"> 
     </head>
     <body>
+        <audio>
+	        <source src="click.mp3"></source>
+        </audio>
         <div class="title">
             帳單 Bill List:
         </div>
@@ -55,6 +58,10 @@
                     //sessionStorage.setItem('chtbill.bill',sel);
             });
             $("button.next").css("visibility","hidden");
+            $("button").click(function(){
+                var au=$("audio")[0];
+                au.play();
+            });
         </script>
     </body>
 </html>

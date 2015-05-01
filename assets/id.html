@@ -6,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="css/style.css?v=1"> 
     </head>
     <body>
+        <audio>
+	        <source src="click.mp3"></source>
+        </audio>
         <div class="title">
             輸入身份證字號 Input ID No:
         </div>
@@ -40,6 +43,10 @@
             $("button.next").click(function(){
                 var input=$("#input").val();
                 sessionStorage.setItem('chtbill.id',input);
+            });
+            $("button").click(function(){
+                var au=$("audio")[0];
+                au.play();
             });
         </script>
     </body>
