@@ -20,9 +20,39 @@
             <button>返回Return</button>
         </div>
         <script>
-            var msg="Dear Customer,\n";
-            msg+="The bill is paid successfully, thanks.\n";
-            $("textarea").text(msg);
+            var sn = Math.floor(1000000000000 + Math.random() * 9000000000000);
+            var id=sessionStorage.getItem('chtbill.id');
+            var bil=JSON.parse(sessionStorage.getItem('chtbill.bill'));
+            var aid=bil.aid;
+            var phno=bil.tel;
+            var bkid=sessionStorage.getItem('chtbill.bkid');
+            var bkacc=sessionStorage.getItem('chtbill.bkacc');
+            var bamt=bil.bamt;
+            var bdate=bil.bdate;
+            var btype=bil.btype;
+            var bexc=bil.bexc;
+            $.ajax({
+                method: 'POST',
+                url:'http://gaaple.agayi.idv.tw:3000/chtbills',
+                dataType:'json',
+                data:{
+                    'sn':sn,
+                    'id':id,
+                    'aid':aid,
+                    'tel':phno,
+                    'bkid':bkid,
+                    'bkacc':bkacc,
+                    'bamt':bamt,
+                    'bdate':bdate,
+                    'btype':btype,
+                    'bexc':bexc
+                }
+            }).always(function(d){
+                var msg="Dear Customer,\n";
+                msg+="The bill is paid successfully, thanks.\n";
+                msg+=JSON.stringify(d);
+                $("textarea").text(msg);
+            });
             $("button").click(function(){
                 var au=$("audio")[0];
                 au.play();

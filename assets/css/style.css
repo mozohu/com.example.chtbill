@@ -45,3 +45,11 @@ table tr.focused {
 input {
     padding: 5px;
 }
+
+.test {
+    font-size: 9px;
+}
+
+.hidden {
+    display: none;
+}

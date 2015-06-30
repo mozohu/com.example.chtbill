@@ -21,15 +21,16 @@
             <a href="result.html"><button>確認Confirm</button></a>
         </div>
         <script>
+            var id=sessionStorage.getItem('chtbill.id');
             var bil=JSON.parse(sessionStorage.getItem('chtbill.bill'));
-            var bid=sessionStorage.getItem('chtbill.bid');
-            var bacc=sessionStorage.getItem('chtbill.bacc');
+            var bkid=sessionStorage.getItem('chtbill.bkid');
+            var bkacc=sessionStorage.getItem('chtbill.bkacc');
             var msg="Dear Customer,\n";
-            msg+="You are about to pay the bill of "+bil[0]+"\n";
-            msg+="\tPhone No:"+bil[1]+"\n";
-            msg+="\tDate:"+bil[2]+"\n";
-            msg+="Via the bank account of ("+bid+") "+bacc+"\n";
-            msg+="The amount is "+bil[3]+"\n";
+            msg+="You are about to pay the bill of "+id+"\n";
+            msg+="\tPhone No:"+bil.tel+"\n";
+            msg+="\tDate:"+bil.bdate+"\n";
+            msg+="Via the bank account of ("+bkid+") "+bkacc+"\n";
+            msg+="The amount is "+bil.bamt+"\n";
             $("textarea").text(msg);
             $("button").click(function(){
                 var au=$("audio")[0];

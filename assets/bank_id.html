@@ -15,6 +15,7 @@
         <div>
             <input id="input" type="text"></input>
         </div>
+        <button id="inq_bank_id">銀行代碼查詢</button>
         <div class="footer">
             <button>取消Cancel</button>
             <a href="bill.html"><button>上一步Prev</button></a>
@@ -36,11 +37,14 @@
             $("div.keyboard div.letter").css("visibility","hidden");
             $("div.keyboard div.letter-lc").css("display","none");
             $("button.next").click(function(){
-                    sessionStorage.setItem('chtbill.bid',$("#input").val());
+                    sessionStorage.setItem('chtbill.bkid',$("#input").val());
             });
             $("button").click(function(){
                 var au=$("audio")[0];
                 au.play();
+            });
+            $("button#inq_bank_id").click(function(){
+                window.open('bank_code.html','1432523731397','width=700,height=500,toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=0,left=0,top=0');
             });
         </script>
     </body>
